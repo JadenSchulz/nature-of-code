@@ -13,14 +13,23 @@ function sketch(p: p5) {
     const DIST_OFFSET = 80;
 
     bodies.push(
-      new Body([p.width / 2 - DIST_OFFSET, p.height / 2 - DIST_OFFSET], 8)
+      new Body([p.width / 2 - DIST_OFFSET, p.height / 2 - DIST_OFFSET], 64)
     );
     bodies.push(
-      new Body([p.width / 2 + DIST_OFFSET, p.height / 2 + DIST_OFFSET], 8)
+      new Body([p.width / 2 + DIST_OFFSET, p.height / 2 + DIST_OFFSET], 64)
+    );
+    bodies.push(
+      new Body([p.width / 2 + DIST_OFFSET, p.height / 2 - DIST_OFFSET], 64)
+    );
+    bodies.push(
+      new Body([p.width / 2 - DIST_OFFSET, p.height / 2 + DIST_OFFSET], 64)
     );
 
-    bodies[0].velocity.set(2, 0);
-    bodies[1].velocity.set(-2, 0);
+    bodies[0].velocity.set(3, 0);
+    bodies[1].velocity.set(-3, 0);
+
+    bodies[2].velocity.set(0, 3);
+    bodies[3].velocity.set(0, -3);
   };
 
   p.draw = () => {
