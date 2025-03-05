@@ -45,6 +45,10 @@ function sketch(p: p5) {
       bodies[i].render();
     }
   };
+
+  p.mouseClicked = () => {
+    bodies.push(new Body([p.mouseX, p.mouseY], 64));
+  };
 }
 
 export const p = new p5(sketch);
