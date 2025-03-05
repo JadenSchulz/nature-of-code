@@ -2,7 +2,11 @@ import p5, { Vector } from "p5";
 import "./main.css";
 
 const CANVAS_DIMENSIONS: [number, number] = [1024, 512];
+<<<<<<< HEAD
 const CANVAS_COLOR: [number, number, number, number] = [255, 255, 255, 255];
+=======
+const CANVAS_COLOR: [number, number, number, number] = [222, 222, 255, 255];
+>>>>>>> 0a8ee6c (added alpha to CANVAS_COLOR, to allow easily creating fading tails)
 function sketch(p: p5) {
   let canvas: p5.Renderer;
   let drawer: Drawer;
