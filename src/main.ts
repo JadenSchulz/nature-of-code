@@ -2,7 +2,7 @@ import p5 from "p5";
 import "./main.css";
 
 const CANVAS_DIMENSIONS: [number, number] = [1024, 512];
-const CANVAS_COLOR: [number, number, number] = [222, 222, 255];
+const CANVAS_COLOR: [number, number, number, number] = [222, 222, 255, 255];
 function sketch(p: p5) {
   p.setup = () => {
     p.createCanvas(...CANVAS_DIMENSIONS);
