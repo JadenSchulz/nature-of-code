@@ -10,51 +10,17 @@ function sketch(p: p5) {
     p.createCanvas(...CANVAS_DIMENSIONS);
     p.background(...CANVAS_COLOR);
 
-    // for (let i = 0; i < 3; i++) {
-    //   const MAX_DIST = 200;
-    //   const x = p.map(
-    //     p.noise(i),
-    //     0,
-    //     1,
-    //     p.width / 2 - MAX_DIST,
-    //     p.width / 2 + MAX_DIST
-    //   );
-    //   const y = p.map(
-    //     p.noise(i + 10000),
-    //     0,
-    //     1,
-    //     p.height / 2 - MAX_DIST,
-    //     p.height / 2 + MAX_DIST
-    //   );
+    const DIST_OFFSET = 80;
 
-    //   const body = new Body([x, y], p.random(5, 10));
-    //   bodies.push(body);
-    // }
+    bodies.push(
+      new Body([p.width / 2 - DIST_OFFSET, p.height / 2 - DIST_OFFSET], 8)
+    );
+    bodies.push(
+      new Body([p.width / 2 + DIST_OFFSET, p.height / 2 + DIST_OFFSET], 8)
+    );
 
-    const DIST_A = 100;
-    const DIST_B = 150;
-
-    bodies.push(new Body([p.width / 2 - DIST_A, p.height / 2 - DIST_A], 8));
-    bodies.push(new Body([p.width / 2 + DIST_A, p.height / 2 + DIST_A], 8));
-    // bodies.push(new Body([p.width / 2 - DIST_A, p.height / 2 + DIST_A], 125));
-    // bodies.push(new Body([p.width / 2 + DIST_A, p.height / 2 - DIST_A], 125));
-
-    bodies[0].velocity.set(20, 0);
-    bodies[1].velocity.set(-20, 0);
-    // bodies[2].velocity.set(0, -20);
-    // bodies[3].velocity.set(0, 20);
-
-    // bodies.push(new Body([p.width / 2 - DIST_B, p.height / 2 - DIST_B], 5));
-    // bodies.push(new Body([p.width / 2 + DIST_B, p.height / 2 + DIST_B], 5));
-    // bodies.push(new Body([p.width / 2 - DIST_B, p.height / 2 + DIST_B], 5));
-    // bodies.push(new Body([p.width / 2 + DIST_B, p.height / 2 - DIST_B], 5));
-
-    // bodies[4].velocity.set(5, 0);
-    // bodies[5].velocity.set(-5, 0);
-    // bodies[6].velocity.set(0, -5);
-    // bodies[7].velocity.set(0, 5);
-
-    // bodies.push(new Body([p.width / 2, p.height / 2], 20));
+    bodies[0].velocity.set(2, 0);
+    bodies[1].velocity.set(-2, 0);
   };
 
   p.draw = () => {

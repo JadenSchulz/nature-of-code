@@ -53,7 +53,7 @@ export class Body {
       const distance = p.constrain(force.mag(), 5, 25);
       const strength = (Body.G * (this.mass * body.mass)) / distance ** 2;
 
-      force.setMag(strength);
+      force.setMag(strength).div(this.mass);
 
       accumulator.add(force);
     }
