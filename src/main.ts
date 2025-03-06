@@ -123,7 +123,7 @@ class Snek {
     p.line(0, 0, this.size / 2, 0);
     p.pop();
 
-    this.segments.forEach((segment) => segment.render(this.position));
+    this.segments.forEach((segment) => segment.render());
   }
 
   wrap() {}
@@ -171,17 +171,11 @@ class Segment {
     this.velocity.set(0, 0);
   }
 
-  render(headPos: Vector) {
+  render() {
     p.push();
 
     p.stroke(0);
     p.fill(0, 255, 80);
-
-    // const period = this.size + this.spacing;
-    // const offset =
-    //   p.sin(headPos.x / period + headPos.y / period + this.segment) *
-    //   (this.size / 2) *
-    //   p.constrain((this.segment - 1) / 3, 0, 1);
 
     const offset =
       ((p.sin(
@@ -198,8 +192,4 @@ class Segment {
     p.circle(0, 0, this.size);
     p.pop();
   }
-}
-
-function sigmoid(x) {
-  return 1 / (1 + Math.exp(-x));
 }
